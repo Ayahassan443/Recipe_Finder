@@ -76,19 +76,27 @@ a {
 }
 
 @media (max-width: 768px) {
-  .header {
-    padding: 0 15px;
+  nav {
+    height: 65px !important;
   }
 
-  .logo {
-    font-size: 24px;
+  nav .container {
+    padding: 0 15px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
   }
 
-  .nav {
-    gap: 15px;
+  nav .container>a {
+    font-size: 1.25rem !important;
+    white-space: nowrap !important;
   }
 
-  .nav a {
-    font-size: 17px;
+  nav .container>div {
+    gap: 12px !important;
+  }
+
+  nav .container>div a {
+    font-size: 16px !important;
+    white-space: nowrap !important;
   }
 }
