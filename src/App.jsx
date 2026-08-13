@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -28,15 +28,18 @@ function App() {
     };
 
     return (
-        <div className="app">
-            <Navbar favCount={favorites.length} />
-            <Routes>
-                <Route path="/" element={<Home favorites={favorites} toggleFavorite={toggleFavorite} />} />
-                <Route path="/recipe/:id" element={<RecipeDetail favorites={favorites} toggleFavorite={toggleFavorite} />} />
-                <Route path="/favorites" element={<Favorites favorites={favorites} toggleFavorite={toggleFavorite} />} />
-            </Routes>
-            <Footer />
-        </div>
+
+        <Router>
+            <div className="app">
+                <Navbar favCount={favorites.length} />
+                <Routes>
+                    <Route path="/" element={<Home favorites={favorites} toggleFavorite={toggleFavorite} />} />
+                    <Route path="/recipe/:id" element={<RecipeDetail favorites={favorites} toggleFavorite={toggleFavorite} />} />
+                    <Route path="/favorites" element={<Favorites favorites={favorites} toggleFavorite={toggleFavorite} />} />
+                </Routes>
+                <Footer />
+            </div>
+        </Router>
     );
 }
 
